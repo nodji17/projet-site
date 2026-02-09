@@ -1,104 +1,871 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="UTF-8" />
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="images/logo.jpg" type="image/png">
-    <script src="script.js" defer></script>
-    <title>perfect services</title>
-</head>
-<body>
-    <header>
-        <div class="nav">
-            <div class="logo">
-               <em>perfect services</em>
-
-            </div>
-            <button class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+<!-- saved from url=(0037)https://www.perfectservices-sarl.com/ -->
+<html lang="fr" class="scroll-smooth"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     
-                <ul class="nav-desktop" id="navDesktop">
-                    <li><a href="index.html">Accueil</a></li>
-                    <li><a href="about-us.html">A propos</a></li>
-                    <li><a href="service.html">Services</a></li>
-                    <li><a href="contact.html">contact</a></li>
-                </ul>            
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfect Services Sarl</title>
+    <script src="./Perfect Services - Agroalimentaire &amp; Matériaux de Construction_files/saved_resource"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="shortcut icon" href="./Perfect Services - Agroalimentaire &amp; Matériaux de Construction_files/logo.PNG" type="image/x-icon">
+    <link href="./Perfect Services - Agroalimentaire &amp; Matériaux de Construction_files/bootstrap-icons.css" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+    <link href="./Perfect Services - Agroalimentaire &amp; Matériaux de Construction_files/css2" rel="stylesheet">
+    <style>
+        :root {
+            --color-primary: #0EA5E9;
+            --color-secondary: #1E293B;
+            --color-accent: #F59E0B;
+            --color-earth: #78350F;
+        }
         
-        </div>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
         
-    </header>
-        <nav class="nav-mobile" id="navMobile">
-            <ul >
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="about-us.html">A propos</a></li>
-                <li><a href="service.html">Services</a></li>
-                <li><a href="contact.html">contact</a></li>
-            </ul>            
+        body {
+            font-family: 'Work Sans', sans-serif;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .hero-pattern {
+            background-image: 
+                radial-gradient(circle at 20% 50%, rgba(14, 165, 233, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(245, 158, 11, 0.1) 0%, transparent 50%);
+        }
+        
+        .grain-overlay {
+            position: relative;
+        }
+        
+        .grain-overlay::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .animate-fadeInUp {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        
+        .animate-scaleIn {
+            animation: scaleIn 0.6s ease-out forwards;
+        }
+        
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+        .delay-400 { animation-delay: 0.4s; }
+        .delay-500 { animation-delay: 0.5s; }
+        
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .hover-lift:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .gradient-border {
+            position: relative;
+            background: white;
+        }
+        
+        .gradient-border::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            padding: 2px;
+            background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+        }
+        
+        .sticky-header {
+            transition: all 0.3s ease;
+        }
+        
+        .sticky-header.scrolled {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .section-divider {
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--color-primary), transparent);
+            margin: 4rem auto;
+            max-width: 200px;
+        }
+        
+        .product-card {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .product-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .product-card:hover::after {
+            left: 100%;
+        }
+        
+        nav a {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--color-primary);
+            transition: width 0.3s ease;
+        }
+        
+        nav a:hover::after,
+        nav a.active::after {
+            width: 100%;
+        }
+    </style>
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.container{width:100%}@media (min-width: 640px){.container{max-width:640px}}@media (min-width: 768px){.container{max-width:768px}}@media (min-width: 1024px){.container{max-width:1024px}}@media (min-width: 1280px){.container{max-width:1280px}}@media (min-width: 1536px){.container{max-width:1536px}}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.inset-0{inset:0px}.top-0{top:0px}.-bottom-10{bottom:-2.5rem}.-left-10{left:-2.5rem}.-right-10{right:-2.5rem}.-top-10{top:-2.5rem}.z-50{z-index:50}.mx-auto{margin-left:auto;margin-right:auto}.mb-16{margin-bottom:4rem}.mb-4{margin-bottom:1rem}.mr-2{margin-right:0.5rem}.mt-4{margin-top:1rem}.mb-1{margin-bottom:0.25rem}.mb-2{margin-bottom:0.5rem}.mb-6{margin-bottom:1.5rem}.mr-3{margin-right:0.75rem}.mb-8{margin-bottom:2rem}.block{display:block}.inline-block{display:inline-block}.flex{display:flex}.grid{display:grid}.hidden{display:none}.h-16{height:4rem}.h-56{height:14rem}.h-6{height:1.5rem}.h-72{height:18rem}.h-12{height:3rem}.w-full{width:100%}.w-auto{width:auto}.w-16{width:4rem}.w-6{width:1.5rem}.w-72{width:18rem}.w-12{width:3rem}.max-w-3xl{max-width:48rem}.max-w-2xl{max-width:42rem}.max-w-5xl{max-width:64rem}.max-w-sm{max-width:24rem}.flex-shrink-0{flex-shrink:0}.rotate-3{--tw-rotate:3deg;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.transform{transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.flex-wrap{flex-wrap:wrap}.items-start{align-items:flex-start}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-12{gap:3rem}.gap-4{gap:1rem}.gap-8{gap:2rem}.gap-16{gap:4rem}.gap-6{gap:1.5rem}.space-x-4 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(1rem * var(--tw-space-x-reverse));margin-left:calc(1rem * calc(1 - var(--tw-space-x-reverse)))}.space-x-8 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(2rem * var(--tw-space-x-reverse));margin-left:calc(2rem * calc(1 - var(--tw-space-x-reverse)))}.space-y-2 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.5rem * var(--tw-space-y-reverse))}.space-y-3 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.75rem * var(--tw-space-y-reverse))}.space-y-4 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem * var(--tw-space-y-reverse))}.space-y-6 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1.5rem * var(--tw-space-y-reverse))}.space-y-8 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(2rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(2rem * var(--tw-space-y-reverse))}.overflow-hidden{overflow:hidden}.scroll-smooth{scroll-behavior:smooth}.rounded-2xl{border-radius:1rem}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:0.5rem}.rounded-3xl{border-radius:1.5rem}.rounded-xl{border-radius:0.75rem}.border{border-width:1px}.border-t{border-top-width:1px}.border-gray-300{--tw-border-opacity:1;border-color:rgb(209 213 219 / var(--tw-border-opacity, 1))}.border-gray-800{--tw-border-opacity:1;border-color:rgb(31 41 55 / var(--tw-border-opacity, 1))}.bg-gray-50{--tw-bg-opacity:1;background-color:rgb(249 250 251 / var(--tw-bg-opacity, 1))}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.bg-amber-300{--tw-bg-opacity:1;background-color:rgb(252 211 77 / var(--tw-bg-opacity, 1))}.bg-amber-500{--tw-bg-opacity:1;background-color:rgb(245 158 11 / var(--tw-bg-opacity, 1))}.bg-blue-500{--tw-bg-opacity:1;background-color:rgb(59 130 246 / var(--tw-bg-opacity, 1))}.bg-gray-200{--tw-bg-opacity:1;background-color:rgb(229 231 235 / var(--tw-bg-opacity, 1))}.bg-gray-800{--tw-bg-opacity:1;background-color:rgb(31 41 55 / var(--tw-bg-opacity, 1))}.bg-green-100{--tw-bg-opacity:1;background-color:rgb(220 252 231 / var(--tw-bg-opacity, 1))}.bg-green-500{--tw-bg-opacity:1;background-color:rgb(34 197 94 / var(--tw-bg-opacity, 1))}.bg-orange-500{--tw-bg-opacity:1;background-color:rgb(249 115 22 / var(--tw-bg-opacity, 1))}.bg-sky-100{--tw-bg-opacity:1;background-color:rgb(224 242 254 / var(--tw-bg-opacity, 1))}.bg-sky-300{--tw-bg-opacity:1;background-color:rgb(125 211 252 / var(--tw-bg-opacity, 1))}.bg-sky-500{--tw-bg-opacity:1;background-color:rgb(14 165 233 / var(--tw-bg-opacity, 1))}.bg-amber-100{--tw-bg-opacity:1;background-color:rgb(254 243 199 / var(--tw-bg-opacity, 1))}.bg-amber-50{--tw-bg-opacity:1;background-color:rgb(255 251 235 / var(--tw-bg-opacity, 1))}.bg-sky-50{--tw-bg-opacity:1;background-color:rgb(240 249 255 / var(--tw-bg-opacity, 1))}.bg-gray-900{--tw-bg-opacity:1;background-color:rgb(17 24 39 / var(--tw-bg-opacity, 1))}.bg-white\/10{background-color:rgb(255 255 255 / 0.1)}.bg-white\/20{background-color:rgb(255 255 255 / 0.2)}.bg-gradient-to-br{background-image:linear-gradient(to bottom right, var(--tw-gradient-stops))}.bg-gradient-to-r{background-image:linear-gradient(to right, var(--tw-gradient-stops))}.from-blue-400{--tw-gradient-from:#60a5fa var(--tw-gradient-from-position);--tw-gradient-to:rgb(96 165 250 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-green-400{--tw-gradient-from:#4ade80 var(--tw-gradient-from-position);--tw-gradient-to:rgb(74 222 128 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-orange-400{--tw-gradient-from:#fb923c var(--tw-gradient-from-position);--tw-gradient-to:rgb(251 146 60 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-yellow-400{--tw-gradient-from:#facc15 var(--tw-gradient-from-position);--tw-gradient-to:rgb(250 204 21 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-gray-800{--tw-gradient-from:#1f2937 var(--tw-gradient-from-position);--tw-gradient-to:rgb(31 41 55 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-sky-300{--tw-gradient-from:#7dd3fc var(--tw-gradient-from-position);--tw-gradient-to:rgb(125 211 252 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-sky-500{--tw-gradient-from:#0ea5e9 var(--tw-gradient-from-position);--tw-gradient-to:rgb(14 165 233 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.to-amber-600{--tw-gradient-to:#d97706 var(--tw-gradient-to-position)}.to-emerald-600{--tw-gradient-to:#059669 var(--tw-gradient-to-position)}.to-indigo-600{--tw-gradient-to:#4f46e5 var(--tw-gradient-to-position)}.to-red-600{--tw-gradient-to:#dc2626 var(--tw-gradient-to-position)}.to-amber-300{--tw-gradient-to:#fcd34d var(--tw-gradient-to-position)}.to-blue-600{--tw-gradient-to:#2563eb var(--tw-gradient-to-position)}.to-gray-900{--tw-gradient-to:#111827 var(--tw-gradient-to-position)}.p-6{padding:1.5rem}.p-8{padding:2rem}.p-10{padding:2.5rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.py-4{padding-top:1rem;padding-bottom:1rem}.px-4{padding-left:1rem;padding-right:1rem}.px-8{padding-left:2rem;padding-right:2rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-20{padding-top:5rem;padding-bottom:5rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.py-12{padding-top:3rem;padding-bottom:3rem}.pb-20{padding-bottom:5rem}.pb-4{padding-bottom:1rem}.pt-32{padding-top:8rem}.pt-4{padding-top:1rem}.pt-8{padding-top:2rem}.text-center{text-align:center}.text-2xl{font-size:1.5rem;line-height:2rem}.text-4xl{font-size:2.25rem;line-height:2.5rem}.text-5xl{font-size:3rem;line-height:1}.text-6xl{font-size:3.75rem;line-height:1}.text-7xl{font-size:4.5rem;line-height:1}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.font-bold{font-weight:700}.font-medium{font-weight:500}.font-semibold{font-weight:600}.leading-relaxed{line-height:1.625}.leading-tight{line-height:1.25}.text-amber-500{--tw-text-opacity:1;color:rgb(245 158 11 / var(--tw-text-opacity, 1))}.text-blue-500{--tw-text-opacity:1;color:rgb(59 130 246 / var(--tw-text-opacity, 1))}.text-gray-600{--tw-text-opacity:1;color:rgb(75 85 99 / var(--tw-text-opacity, 1))}.text-gray-700{--tw-text-opacity:1;color:rgb(55 65 81 / var(--tw-text-opacity, 1))}.text-gray-800{--tw-text-opacity:1;color:rgb(31 41 55 / var(--tw-text-opacity, 1))}.text-gray-900{--tw-text-opacity:1;color:rgb(17 24 39 / var(--tw-text-opacity, 1))}.text-green-500{--tw-text-opacity:1;color:rgb(34 197 94 / var(--tw-text-opacity, 1))}.text-green-700{--tw-text-opacity:1;color:rgb(21 128 61 / var(--tw-text-opacity, 1))}.text-orange-500{--tw-text-opacity:1;color:rgb(249 115 22 / var(--tw-text-opacity, 1))}.text-sky-500{--tw-text-opacity:1;color:rgb(14 165 233 / var(--tw-text-opacity, 1))}.text-sky-700{--tw-text-opacity:1;color:rgb(3 105 161 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.text-amber-700{--tw-text-opacity:1;color:rgb(180 83 9 / var(--tw-text-opacity, 1))}.text-gray-300{--tw-text-opacity:1;color:rgb(209 213 219 / var(--tw-text-opacity, 1))}.text-gray-500{--tw-text-opacity:1;color:rgb(107 114 128 / var(--tw-text-opacity, 1))}.text-sky-100{--tw-text-opacity:1;color:rgb(224 242 254 / var(--tw-text-opacity, 1))}.text-sky-400{--tw-text-opacity:1;color:rgb(56 189 248 / var(--tw-text-opacity, 1))}.opacity-30{opacity:0.3}.mix-blend-multiply{mix-blend-mode:multiply}.shadow-sm{--tw-shadow:0 1px 2px 0 rgb(0 0 0 / 0.05);--tw-shadow-colored:0 1px 2px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-lg{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-2xl{--tw-shadow:0 25px 50px -12px rgb(0 0 0 / 0.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.blur-3xl{--tw-blur:blur(64px);filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.filter{filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.backdrop-blur-lg{--tw-backdrop-blur:blur(16px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-colors{transition-property:color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.delay-100{transition-delay:100ms}.delay-200{transition-delay:200ms}.delay-300{transition-delay:300ms}.duration-300{transition-duration:300ms}.hover\:scale-105:hover{--tw-scale-x:1.05;--tw-scale-y:1.05;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.hover\:bg-amber-600:hover{--tw-bg-opacity:1;background-color:rgb(217 119 6 / var(--tw-bg-opacity, 1))}.hover\:bg-blue-600:hover{--tw-bg-opacity:1;background-color:rgb(37 99 235 / var(--tw-bg-opacity, 1))}.hover\:bg-gray-900:hover{--tw-bg-opacity:1;background-color:rgb(17 24 39 / var(--tw-bg-opacity, 1))}.hover\:bg-green-600:hover{--tw-bg-opacity:1;background-color:rgb(22 163 74 / var(--tw-bg-opacity, 1))}.hover\:bg-orange-600:hover{--tw-bg-opacity:1;background-color:rgb(234 88 12 / var(--tw-bg-opacity, 1))}.hover\:bg-sky-600:hover{--tw-bg-opacity:1;background-color:rgb(2 132 199 / var(--tw-bg-opacity, 1))}.hover\:bg-white\/30:hover{background-color:rgb(255 255 255 / 0.3)}.hover\:text-sky-500:hover{--tw-text-opacity:1;color:rgb(14 165 233 / var(--tw-text-opacity, 1))}.hover\:text-sky-400:hover{--tw-text-opacity:1;color:rgb(56 189 248 / var(--tw-text-opacity, 1))}.hover\:shadow-xl:hover{--tw-shadow:0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.focus\:border-sky-500:focus{--tw-border-opacity:1;border-color:rgb(14 165 233 / var(--tw-border-opacity, 1))}.focus\:outline-none:focus{outline:2px solid transparent;outline-offset:2px}@media (min-width: 768px){.md\:flex{display:flex}.md\:hidden{display:none}.md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.md\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.md\:grid-cols-4{grid-template-columns:repeat(4, minmax(0, 1fr))}.md\:text-5xl{font-size:3rem;line-height:1}.md\:text-6xl{font-size:3.75rem;line-height:1}}@media (min-width: 1024px){.lg\:grid-cols-4{grid-template-columns:repeat(4, minmax(0, 1fr))}}</style></head>
+<body class="bg-gray-50">
+    
+    <!-- Header -->
+    <header class="sticky-header fixed w-full top-0 z-50 bg-white shadow-sm scrolled">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-4">
+                    <img src="images/logo.jpg" alt="Perfect Services Logo" class="h-16 w-auto"  _mstalt="408278">
+                </div>
+                
+                <!-- Desktop Menu -->
+                <ul class="hidden md:flex items-center space-x-8 text-sm font-medium">
+                    <li><a href="#accueil" class="text-gray-700 hover:text-sky-500">Accueil</a></li>
+                    <li><a href="#services" class="text-gray-700 hover:text-sky-500 active">Services</a></li>
+                    <li><a href="#apropos" class="text-gray-700 hover:text-sky-500">À Propos</a></li>
+                    <li><a href="#contact" class="text-gray-700 hover:text-sky-500">Contact</a></li>
+                </ul>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobileMenuBtn" class="md:hidden text-gray-700">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="hidden md:hidden mt-4 pb-4 space-y-3">
+                <a href="#accueil" class="block text-gray-700 hover:text-sky-500 py-2">Accueil</a>
+                <a href="#services" class="block text-gray-700 hover:text-sky-500 py-2 ">Services</a>
+                <a href="#apropos" class="block text-gray-700 hover:text-sky-500 py-2">À Propos</a>
+                <a href="#contact" class="block text-gray-700 hover:text-sky-500 py-2">Contact</a>
+                
+            </div>
         </nav>
-    <div class="content" id="content">
+    </header>
 
-        <section>
-            <p>Bienvenu sur le site de PERFECT SERVICES</p>
-             <div class="presentation">
-                Perfect services vous accompagne dans l'etablissement des politiques QHSE de votre entreprise et dans l'usinage des pieces industrielles.
-             </div>
-             <div class="presentation-image">
-                <div class="list">
-                    <img src="images/usinage/USINAGE-2.jpg" alt="">
-                </div>
-                <div class="list">
-                    <img src="images/2.jpg" alt="">
-                </div>
-                <div class="list">
-                    <img src="images/3.jpg" alt="">
-                </div>
-                <div class="list">
-                    <img src="images/epi/EPI-4.jpg" alt="">
-                </div>
-             </div>
-
-        </section>
-       
-    </div>
-        <footer>
-            <div class="block-lien">
-                <div class="a-propos-footer">
-                    <h4>A propos de nous</h4>
-                    <p>
-                        PERFECT SERVICES est une entreprise spécialisé dans l'usinage des matériaux et
-                         dans les prestations QHSE
+    <!-- Hero Section -->
+    <section id="accueil" class="relative pt-32 pb-20 hero-pattern grain-overlay overflow-hidden">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6 animate-fadeInUp">
+                    <div class="inline-block bg-sky-100 text-sky-700 px-4 py-2 rounded-full text-sm font-semibold">
+                     <!--<i class="bi bi-star"></i><font _mstmutation="1"> Votre partenaire de confiance-->   
+                    </font></div>
+                        <h1 style="background: var(--color-primary); padding: 5px; width: max-content; border-radius: 10px;"> <!-- class="text-5xl md:text-6xl font-bold text-gray-900 leading-tight"<font _mstmutation="1">
+                        Produits de 
+                        <span class="text-sky-500" _mstmutation="1">Qualité</span> 
+                        pour votre 
+                        <span class="text-amber-500" _mstmutation="1">Réussite</span></font>
+                        -->
+                        Perfect Services votre partenaire de confiance
+                    </h1>
+                    <p class="text-xl text-gray-600 leading-relaxed">
+                        Perfect Services est spécialisée dans le developpement des projets agroalimentaires ainsi que dans l'usinage des pièces industrielles.
                     </p>
+                    <!--
+                    <div class="flex flex-wrap gap-4 pt-4">
+                        <a href="https://www.perfectservices-sarl.com/#agroalimentaire" class="bg-sky-500 text-white px-8 py-4 rounded-lg hover:bg-sky-600 transition-all duration-300 font-semibold shadow-lg hover:shadow-xl transform hover:scale-105">
+                            Produits Agroalimentaires
+                        </a>
+                        <a href="https://www.perfectservices-sarl.com/#construction" class="bg-gray-800 text-white px-8 py-4 rounded-lg hover:bg-gray-900 transition-all duration-300 font-semibold shadow-lg hover:shadow-xl transform hover:scale-105">
+                            Matériaux de Construction
+                        </a>
+                    </div>
+                    -->
                     
                 </div>
-                <div class="services-footer">
-                    <h4>Nos services</h4>
-                    <ul class="services-footer">
-                        <li><a href="service.html#qhse">QHSE</a></li>
-                        <li><a href="service.html#qhse">Agroalimentaire</a></li>
-                        <li><a href="service.html#usinage">Usinage</a></li>
-                        <li><a href="service.html#epi">Vente des EPI</a></li>
-                    </ul>
-    
+                <!-- 
+                <div class="relative animate-fadeInUp delay-200">
+                    <div class="absolute -top-10 -right-10 w-72 h-72 bg-sky-300 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-float"></div>
+                    <div class="absolute -bottom-10 -left-10 w-72 h-72 bg-amber-300 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-float" style="animation-delay: 2s;"></div>
+                    <div class="relative glass-card rounded-2xl p-8 space-y-6">
+                        <div class="flex items-center space-x-4">
+                            <div class="bg-sky-500 text-white w-16 h-16 rounded-lg flex items-center justify-center text-2xl">
+                                <i class="bi bi-trophy"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900">Excellence Garantie</h3>
+                                <p class="text-gray-600">Service exceptionnel</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="bg-amber-500 text-white w-16 h-16 rounded-lg flex items-center justify-center text-2xl">
+                                <i class="bi bi-truck"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900">Livraison Rapide</h3>
+                                <p class="text-gray-600">Dans tout le pays</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="bg-green-500 text-white w-16 h-16 rounded-lg flex items-center justify-center text-2xl">
+                                ✓
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900">Qualité Certifiée</h3>
+                                <p class="text-gray-600">Produits sélectionnés</p>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </section>
+    <section id="services">
+        <!-- EPI SECTION -->
+    <section id="epi" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 animate-fadeInUp">
+                <div class="inline-block bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm font-semibold mb-4">
+                    <i class="bi bi-flower3"></i><font _mstmutation="1"> Vente des EPI
+                </font></div>
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                    equipements de Protection individuelle de qualité
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Découvrez nos EPI idéale pour vos pour vos chantiers 
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Product 1 -->
+                <div class="product-card hover-lift bg-white rounded-2xl shadow-lg overflow-hidden animate-scaleIn">
+                    <div class="h-56 bg-gradient-to-br from-green-400 to-emerald-600 flex items-center justify-center text-white text-7xl">
+                        <img src="epi/chaussures/images (6).jpeg" alt="">
+                    </div>
+                    <div class="p-6 space-y-3">
+                        <h3 class="text-2xl font-bold text-gray-900">Chaussures de sécurité</h3>
+                        <!--
+                        
+                        <p class="text-gray-600">Riz, maïs, mil et autres céréales de première qualité pour tous vos besoins.</p>
+                        <ul class="space-y-2 text-sm text-gray-700">
+                            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span><font _mstmutation="1"> Riz premium</font></li>
+                            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span><font _mstmutation="1"> Maïs local</font></li>
+                            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span><font _mstmutation="1"> Mil et sorgho</font></li>
+                        </ul>-->
+                        <button class="w-full bg-green-500 text-white py-3 rounded-lg hover:bg-green-600 transition-colors duration-300 font-semibold mt-4">
+                            Commander
+                        </button>
+                    </div>
                 </div>
                 
-                <div class="lien-footer">
-                    <h4>Liens rapides</h4>
-                    <ul class="nav-footer" id="navFooter">
-                        <li><a href="index.html">Accueil</a></li>
-                        <li><a href="about-us.html">A propos</a></li>
-                        <li><a href="service.html">Services</a></li>
-                        <li><a href="contact.html">contact</a></li>
-                    </ul>            
+                <!-- Product 2 -->
+                <div class="product-card hover-lift bg-white rounded-2xl shadow-lg overflow-hidden animate-scaleIn delay-100">
+                    <div class="h-56 bg-gradient-to-br from-orange-400 to-red-600 flex items-center justify-center text-white text-7xl">
+                        <img src="epi/combinaisons/images (15).jpeg" alt="">
+                    </div>
+                    <div class="p-6 space-y-3">
+                        <h3 class="text-2xl font-bold text-gray-900">Combinaisons</h3>
+                        <!--
+                        <p class="text-gray-600">Légumes frais et de saison, cueillis avec soin pour votre santé.</p>
+                        <ul class="space-y-2 text-sm text-gray-700">
+                            <li class="flex items-center"><span class="text-orange-500 mr-2">✓</span><font _mstmutation="1"> Légumes frais</font></li>
+                            <li class="flex items-center"><span class="text-orange-500 mr-2">✓</span><font _mstmutation="1"> Produits bio</font></li>
+                            <li class="flex items-center"><span class="text-orange-500 mr-2">✓</span><font _mstmutation="1"> Livraison rapide</font></li>
+                        </ul>
+                        -->
+                        
+                        <button class="w-full bg-orange-500 text-white py-3 rounded-lg hover:bg-orange-600 transition-colors duration-300 font-semibold mt-4">
+                            Commander
+                        </button>
+                    </div>
                 </div>
+                
+                <!-- Product 3 -->
+                <div class="product-card hover-lift bg-white rounded-2xl shadow-lg overflow-hidden animate-scaleIn delay-200">
+                    <div class="h-56 bg-gradient-to-br from-yellow-400 to-amber-600 flex items-center justify-center text-white text-7xl">
+                        <img src="epi/gilets/téléchargement (10).jpeg" alt="">
+                    </div>
+                    <div class="p-6 space-y-3">
+                        <h3 class="text-2xl font-bold text-gray-900">Gilets</h3>
+                        <!--
+                        <p class="text-gray-600">Haricots, arachides et autres légumineuses riches en protéines.</p>
+                        <ul class="space-y-2 text-sm text-gray-700">
+                            <li class="flex items-center"><span class="text-amber-500 mr-2">✓</span><font _mstmutation="1"> Haricots variés</font></li>
+                            <li class="flex items-center"><span class="text-amber-500 mr-2">✓</span><font _mstmutation="1"> Arachides</font></li>
+                            <li class="flex items-center"><span class="text-amber-500 mr-2">✓</span><font _mstmutation="1"> Pois chiches</font></li>
+                        </ul>
+                        -->
+                        
+                        <button class="w-full bg-amber-500 text-white py-3 rounded-lg hover:bg-amber-600 transition-colors duration-300 font-semibold mt-4">
+                            Commander
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Product 4 -->
+              <div class="product-card hover-lift bg-white rounded-2xl shadow-lg overflow-hidden animate-scaleIn delay-300">
+                    <div class="h-56 bg-gradient-to-br from-blue-400 to-indigo-600 flex items-center justify-center text-white text-7xl">
+                        <img src="epi/casques/casque1.jpeg" alt="">
+                    </div>
+                    <div class="p-6 space-y-3">
+                        <h3 class="text-2xl font-bold text-gray-900">Casques</h3>
+                        <!--
+                        <p class="text-gray-600">Jus naturels, eau minérale et boissons rafraîchissantes.</p>
+                        <ul class="space-y-2 text-sm text-gray-700">
+                            <li class="flex items-center"><span class="text-blue-500 mr-2">✓</span><font _mstmutation="1"> Jus naturels</font></li>
+                            <li class="flex items-center"><span class="text-blue-500 mr-2">✓</span><font _mstmutation="1"> Eau minérale</font></li>
+                            <li class="flex items-center"><span class="text-blue-500 mr-2">✓</span><font _mstmutation="1"> Boissons locales</font></li>
+                        </ul>
+                        -->
+                        
+                        <button class="w-full bg-blue-500 text-white py-3 rounded-lg hover:bg-blue-600 transition-colors duration-300 font-semibold mt-4">
+                            Commander
+                        </button>
+                    </div>
+                </div>
+                <div class="product-card hover-lift bg-white rounded-2xl shadow-lg overflow-hidden animate-scaleIn">
+                    <div class="h-56 bg-gradient-to-br from-green-400 to-emerald-600 flex items-center justify-center text-white text-7xl">
+                        <img src="images/epi/EPI-2.jpg" alt="">
+                    </div>
+                    <div class="p-6 space-y-3">
+                        <h3 class="text-2xl font-bold text-gray-900">Pack complet</h3>
+                        <!--
+                        
+                        <p class="text-gray-600">Riz, maïs, mil et autres céréales de première qualité pour tous vos besoins.</p>
+                        <ul class="space-y-2 text-sm text-gray-700">
+                            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span><font _mstmutation="1"> Riz premium</font></li>
+                            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span><font _mstmutation="1"> Maïs local</font></li>
+                            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span><font _mstmutation="1"> Mil et sorgho</font></li>
+                        </ul>-->
+                        <button class="w-full bg-blue-500 text-white py-3 rounded-lg hover:bg-green-600 transition-colors duration-300 font-semibold mt-4">
+                            Commander
+                        </button>
+
+                    </div>
+                </div>
+                <div class="product-card hover-lift bg-white rounded-2xl shadow-lg overflow-hidden animate-scaleIn">
+                    <div class="h-56 bg-gradient-to-br from-green-400 to-emerald-600 flex items-center justify-center text-white text-7xl">
+                        <img src="images/epi/EPI-3.jpg" alt="">
+                    </div>
+                    <div class="p-6 space-y-3">
+                        <h3 class="text-2xl font-bold text-gray-900">pack complet</h3>
+                        <!--
+                        
+                        <p class="text-gray-600">Riz, maïs, mil et autres céréales de première qualité pour tous vos besoins.</p>
+                        <ul class="space-y-2 text-sm text-gray-700">
+                            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span><font _mstmutation="1"> Riz premium</font></li>
+                            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span><font _mstmutation="1"> Maïs local</font></li>
+                            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span><font _mstmutation="1"> Mil et sorgho</font></li>
+                        </ul>-->
+                        <button class="w-full bg-orange-500 text-white py-3 rounded-lg hover:bg-green-600 transition-colors duration-300 font-semibold mt-4">
+                            Commander
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--<div class="section-divider"></div>-->
+
+    <!-- usinage -->
+    <section id="usinage" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 animate-fadeInUp">
+                <div class="inline-block bg-gray-200 text-gray-800 px-4 py-2 rounded-full text-sm font-semibold mb-4">
+                    <i class="bi bi-house"></i><font _mstmutation="1"> Usinage
+                </font></div>
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                    Usinage des pieces industrielles
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Usinage de vos pièces industrielles avec precision
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-4 gap-8 mb-16">
+                <!-- Material 1 -->
+                 
+                <div class="gradient-border hover-lift rounded-2xl p-8 space-y-4 animate-fadeInUp">
+                    <div class="text-6xl mb-4" style="width: 90%; height: 90%;"><img src="images/usinage/USINAGE-2.jpg" alt="" ></div>
+                    <!--
+                        <h3 class="text-3xl font-bold text-gray-900">Sable</h3>
+                    <p class="text-gray-600 leading-relaxed">Sable de qualité pour tous vos travaux de construction, de la fondation à la finition.</p>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-center text-gray-700"><span class="text-sky-500 mr-2 text-xl">•</span><font _mstmutation="1"> Sable fin</font></li>
+                        <li class="flex items-center text-gray-700"><span class="text-sky-500 mr-2 text-xl">•</span><font _mstmutation="1"> Sable gros</font></li>
+                        <li class="flex items-center text-gray-700"><span class="text-sky-500 mr-2 text-xl">•</span><font _mstmutation="1"> Sable lavé</font></li>
+                    </ul>
+                    
+                    
+                    <div class="pt-4">
+                        <span class="inline-block bg-sky-100 text-sky-700 px-4 py-2 rounded-full text-sm font-semibold">
+                            Livraison disponible
+                        </span>
+                    </div>
+                    -->
+                </div>
+                
+                
+                <!-- Material 2 -->
+                <div class="gradient-border hover-lift rounded-2xl p-8 space-y-4 animate-fadeInUp delay-100">
+                    <div class="text-6xl mb-4"><img src="images/2.jpg" alt=""></div>
+                    <!--
+                    <h3 class="text-3xl font-bold text-gray-900">Gravier</h3>
+                    <p class="text-gray-600 leading-relaxed">Gravier concassé de différentes granulométries pour béton et travaux routiers.</p>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-center text-gray-700"><span class="text-amber-500 mr-2 text-xl">•</span><font _mstmutation="1"> Gravier 5/15</font></li>
+                        <li class="flex items-center text-gray-700"><span class="text-amber-500 mr-2 text-xl">•</span><font _mstmutation="1"> Gravier 15/25</font></li>
+                        <li class="flex items-center text-gray-700"><span class="text-amber-500 mr-2 text-xl">•</span><font _mstmutation="1"> Gravier décoratif</font></li>
+                    </ul>
+                    <div class="pt-4">
+                        <span class="inline-block bg-amber-100 text-amber-700 px-4 py-2 rounded-full text-sm font-semibold">
+                            Stock permanent
+                        </span>
+                    </div>
+                    -->
+                    
+                </div>
+                
+                <!-- Material 3 -->
+                <div class="gradient-border hover-lift rounded-2xl p-8 space-y-4 animate-fadeInUp delay-200">
+                    <div class="text-6xl mb-4"><img src="images/3.jpg" alt=""></div>
+                    <!--
+                    <h3 class="text-3xl font-bold text-gray-900">Pierres</h3>
+                    <p class="text-gray-600 leading-relaxed">Cailloux et pierres concassées pour fondations et remplissage.</p>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-center text-gray-700"><span class="text-gray-500 mr-2 text-xl">•</span><font _mstmutation="1"> Tout-venant</font></li>
+                        <li class="flex items-center text-gray-700"><span class="text-gray-500 mr-2 text-xl">•</span><font _mstmutation="1"> Concassé 0/31.5</font></li>
+                        <li class="flex items-center text-gray-700"><span class="text-gray-500 mr-2 text-xl">•</span><font _mstmutation="1"> Pierre de taille</font></li>
+                    </ul>
+                    <div class="pt-4">
+                        <span class="inline-block bg-gray-200 text-gray-700 px-4 py-2 rounded-full text-sm font-semibold">
+                            Prix compétitifs
+                        </span>
+                    </div>
+                    -->
+                    
+                </div>
+                <div class="gradient-border hover-lift rounded-2xl p-8 space-y-4 animate-fadeInUp delay-200">
+                    <div class="text-6xl mb-4"><img src="images/1.jpg" alt=""></div>
+            </div>
+        </section>    
+            <!-- PRESTATION DE SERVICE -->
+            <div class="bg-gradient-to-r from-gray-800 to-gray-900 rounded-3xl p-10 text-white grid md:grid-cols-2 gap-8 items-center animate-fadeInUp delay-300" style="background:#78350F;" >
+                <div class="space-y-6">
+                    <h3 class="text-4xl font-bold">Prestation de Services QHSE/Agroalimentaire</h3>
+                    <p class="text-gray-300 text-lg leading-relaxed">
+                        Notre entreprise est disponible pour vous accompagnez la politique QHSE de votre entreprise 
+                        ainsi que dans la gestion de vos projets agroalimentaires.
+                    </p>
+                    <ul class="space-y-3">
+                        <li class="flex items-center"><span class="text-sky-400 mr-3 text-2xl">.</span><font _mstmutation="1"> Audit de votre entreprise</font></li>
+                        <li class="flex items-center"><span class="text-sky-400 mr-3 text-2xl">.</span><font _mstmutation="1"> Etablissement des poliques QHSE</font></li>
+                        <li class="flex items-center"><span class="text-sky-400 mr-3 text-2xl">.</span><font _mstmutation="1"> Etude de la qualité des produits agroalimentaires</font></li>
+                        <li class="flex items-center"><span class="text-sky-400 mr-3 text-2xl">.</span><font _mstmutation="1"> Service client dédié</font></li>
+                    </ul>
+                </div>
+                <div class="flex justify-center">
+                    <div class="bg-white text-gray-900 rounded-2xl p-8 space-y-4 shadow-2xl max-w-sm">
+                        <div class="text-5xl text-center mb-4"><i class="bi-truck bi"></i></div>
+                        <h4 class="text-2xl font-bold text-center">Demander une prestation</h4>
+                        <a href="#contact" ><p class="text-gray-600 text-center">Contactez-nous pour un devis</p></a>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+
+    
+    <!-- About Section -->
+    <section id="apropos" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="space-y-6 animate-fadeInUp">
+                    <div class="inline-block bg-sky-100 text-sky-700 px-4 py-2 rounded-full text-sm font-semibold">
+                        <!--<i class="bi bi-briefcase"></i><font _mstmutation="1"> À Propos de Nous
+                    </font>-->
+                <h1 style="background: var(--color-primary); padding: 5px; width: max-content; border-radius: 10px;">
+                    A propos de nous
+                </h1>
+                </div>
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-900">
+                        Votre Partenaire de Confiance toujours à vos côté
+                    </h2>
+                    <p class="text-lg text-gray-600 leading-relaxed">
+                        Perfect Services est une entreprise créée en 2021 et qui a pour but de vous accompagner dans l'evolution de vos projets.
+                    </p>
+                    <p class="text-lg text-gray-600 leading-relaxed">
+                        Nous vous garantissons une qualité  de service impeccable à des prix assez compétitifs <!--Notre mission est simple : fournir des produits de qualité supérieure à des prix compétitifs, tout en offrant un service client exceptionnel et des délais de livraison respectés.-->
+                    </p>
+                    <!--
+                    <div class="grid grid-cols-2 gap-6 pt-4">
+                        <div class="text-center p-6 bg-sky-50 rounded-xl">
+                            <div class="text-4xl font-bold text-sky-500 mb-2">715+</div>
+                            <div class="text-gray-600 font-medium">Clients Satisfaits</div>
+                        </div>
+                        <div class="text-center p-6 bg-amber-50 rounded-xl">
+                            <div class="text-4xl font-bold text-amber-500 mb-2">20+</div>
+                            <div class="text-gray-600 font-medium">Partenaires de travail</div>
+                        </div>
+                    </div>
+                    -->
+                    
+                </div>
+                <!--
+                <div class="relative animate-fadeInUp delay-200">
+                    <div class="absolute inset-0 bg-gradient-to-br from-sky-300 to-amber-300 rounded-3xl transform rotate-3"></div>
+                    <div class="relative bg-white rounded-3xl p-8 shadow-2xl space-y-6">
+                        <h3 class="text-2xl font-bold text-gray-900">Nos Valeurs</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start space-x-4">
+                                <div class="bg-sky-500 text-white w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0 text-xl">
+                                    ⭐
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-900 mb-1">Qualité</h4>
+                                    <p class="text-gray-600 text-sm">Sélection rigoureuse de tous nos produits</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-4">
+                                <div class="bg-amber-500 text-white w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0 text-xl">
+                                    🤝
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-900 mb-1">Fiabilité</h4>
+                                    <p class="text-gray-600 text-sm">Respect des engagements et délais</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-4">
+                                <div class="bg-green-500 text-white w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0 text-xl">
+                                    💚
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-900 mb-1">Service</h4>
+                                    <p class="text-gray-600 text-sm">Écoute et satisfaction client prioritaires</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gradient-to-br from-sky-500 to-red-600 text-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 animate-fadeInUp">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">Contactez-Nous</h2>
+                <!--
+                <p class="text-xl text-sky-100 max-w-2xl mx-auto">
+                    Notre équipe est à votre disposition pour répondre à toutes vos questions
+                </p>
+                -->
                 
             </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+                <!-- Contact Form -->
+                <div class="bg-white rounded-2xl p-8 text-gray-900 shadow-2xl animate-fadeInUp">
+                    <h3 class="text-2xl font-bold mb-6">Envoyez-nous un Message</h3>
+                    <form class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-semibold mb-2">Nom </label>
+                            <input type="text" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-sky-500 transition-colors" placeholder="Votre nom" _mstplaceholder="117962">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold mb-2">Email</label>
+                            <input type="email" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-sky-500 transition-colors" placeholder="votre@email.com" _mstplaceholder="270465">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold mb-2">Téléphone</label>
+                            <input type="tel" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-sky-500 transition-colors" placeholder="+237 XXX XXX XXX" _mstplaceholder="176670">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold mb-2">Domaine</label>
+                            <select class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-sky-500 transition-colors">
+                                <option>Agroalimentaire</option>
+                                <option>HSE</option>
+                                <option>Usinage industriel</option>
+                                <option>Achat des equipements</option>
+                    
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold mb-2">Message</label>
+                            <textarea rows="4" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-sky-500 transition-colors" placeholder="Décrivez votre besoin..." _mstplaceholder="488956"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-sky-500 text-white py-4 rounded-lg hover:bg-sky-600 transition-colors duration-300 font-bold text-lg">
+                            Envoyer le Message
+                        </button>
+                    </form>
+                </div>
+                
+                <!-- Contact Info -->
+                <div class="space-y-8 animate-fadeInUp delay-200">
+                    <div class="bg-white/10 backdrop-blur-lg rounded-2xl p-8 space-y-6">
+                        <h3 class="text-2xl font-bold">Informations de Contact</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start space-x-4">
+                                <div class="bg-white/20 w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i class="bi bi-geo-alt"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold mb-1">Adresse</h4>
+                                    <p class="text-sky-100">Douala, Cameroun</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-4">
+                                <div class="bg-white/20 w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i class="bi bi-telephone"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold mb-1">Téléphone</h4>
+                                    <p class="text-sky-100">+237 652 949 906</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-4">
+                                <div class="bg-white/20 w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i class="bi bi-envelope-at"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold mb-1">Email</h4>
+                                    <p class="text-sky-100">perfectservices14@yahoo.com</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-4">
+                                <div class="bg-white/20 w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i class="bi bi-clock"></i>
+                                </div>
+                                
+                               <!--
+                                <div>
+                                    <h4 class="font-bold mb-1">Horaires</h4>
+                                    <p class="text-sky-100">Lun - Sam: 8h - 18h</p>
+                                    <p class="text-sky-100">Dimanche: Fermé</p>
+                                </div>
+                                --> 
+                            </div>
+                        </div>
+                    </div>
+                    <!--
+                    <div class="bg-white/10 backdrop-blur-lg rounded-2xl p-8">
+                        <h3 class="text-2xl font-bold mb-4">Suivez-Nous</h3>
+                        <div class="flex space-x-4">
+                            <a href="https://www.perfectservices-sarl.com/#" class="bg-white/20 hover:bg-white/30 w-12 h-12 rounded-lg flex items-center justify-center transition-colors">
+                                <i class="bi-facebook"></i>
+                            </a>
+                            <a href="https://www.perfectservices-sarl.com/#" class="bg-white/20 hover:bg-white/30 w-12 h-12 rounded-lg flex items-center justify-center transition-colors">
+                                <i class="bi bi-instagram"></i>
+                            </a>
+                            <a href="https://www.perfectservices-sarl.com/#" class="bg-white/20 hover:bg-white/30 w-12 h-12 rounded-lg flex items-center justify-center transition-colors">
+                                <i class="bi bi-whatsapp"></i>
+                            </a>
+                            <a href="https://www.perfectservices-sarl.com/#" class="bg-white/20 hover:bg-white/30 w-12 h-12 rounded-lg flex items-center justify-center transition-colors">
+                                <i class="bi bi-twitter"></i>
+                            </a>
+                        </div>
+                    </div>
+                    -->
+                    
+                </div>
+            </div>
+        </div>
+    </section>
 
-            <p class="signature">2026 Perfect Services. Tous droits réservés</p>
-        </footer>
-    
-</body>
-</html>
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <div class="space-y-4">
+                    <h4 class="text-white font-bold text-lg">Perfect Services</h4>
+                    <p class="text-sm">Le partenaire idéale dans l'accompagnement de vos projets.</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-4">Nos services</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="https://www.perfectservices-sarl.com/#qhse" class="hover:text-sky-400 transition-colors">QHSE</a></li>
+                        <li><a href="https://www.perfectservices-sarl.com/#qhse" class="hover:text-sky-400 transition-colors">Agroalimentaire</a></li>
+                        <li><a href="https://www.perfectservices-sarl.com/#epi" class="hover:text-sky-400 transition-colors">Vente des EPI</a></li>
+                        <li><a href="https://www.perfectservices-sarl.com/#usinage" class="hover:text-sky-400 transition-colors">usinage</a></li>
+                    </ul>
+                </div>
+                <!--
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-4">Construction</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="https://www.perfectservices-sarl.com/#" class="hover:text-sky-400 transition-colors">Sable</a></li>
+                        <li><a href="https://www.perfectservices-sarl.com/#" class="hover:text-sky-400 transition-colors">Gravier</a></li>
+                        <li><a href="https://www.perfectservices-sarl.com/#" class="hover:text-sky-400 transition-colors">Cailloux</a></li>
+                        <li><a href="https://www.perfectservices-sarl.com/#" class="hover:text-sky-400 transition-colors">Livraison</a></li>
+                    </ul>
+                </div>
+                -->
+                
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-4">Liens Rapides</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#accueil" class="hover:text-sky-400 transition-colors">Accueil</a></li>
+                        <li><a href="#apropos" class="hover:text-sky-400 transition-colors">À Propos</a></li>
+                        <li><a href="#contact" class="hover:text-sky-400 transition-colors">Contact</a></li>
+                        <li><a href="#services" class="hover:text-sky-400 transition-colors">Services</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center text-sm">
+                <p>© 2026 Perfect Services. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Sticky Header on Scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.sticky-header');
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // Smooth Scroll for Navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+        
+        // Active Navigation Link
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('nav a[href^="#"]');
+        
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+        
+        // Form Submission (Example)
+        document.querySelector('form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Merci pour votre message ! Nous vous contacterons bientôt.');
+            e.target.reset();
+        });
+    </script>
+    <script src="./Perfect Services - Agroalimentaire &amp; Matériaux de Construction_files/bootstrap.bundle.min.js.télécharger" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+</body></html>
